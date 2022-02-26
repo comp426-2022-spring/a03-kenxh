@@ -26,17 +26,17 @@ app.get('/app/', (req, res) => {
 });
 
 app.get('/app/flip', (req, res) => {
-    coinFlip() == "heads" ? res.json({ flip: 'heads' }) : res.json({ flip: 'tails'})
+    res.status(200).json({ flip: coinFlip()})
 });
 
 app.get('/app/flips/:number', (req, res) => {
     const flips = coinFlips(req.params.number);
     const count = countFlips(flips);
-    res.json({ raw: flips, summary: count })
+    res.status(200).json({ raw: flips, summary: count })
 });
 
-app.get('/app/flip/call/:call', (req, res) => {
-    res.json(flipACoin(req.params.call))
+app.get('/app/flip/call/:call(heads|tails)', (req, res) => {
+    res.status(200).json(flipACoin(req.params.call))
 })
 
 app.use(function(req, res){
