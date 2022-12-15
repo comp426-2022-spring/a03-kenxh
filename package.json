@@ -18,7 +18,7 @@
   "type": "module",
   "homepage": "https://github.com/comp426-2022-spring/a03-kenxh#readme",
   "dependencies": {
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "minimist": "^1.2.5"
   }
 }
